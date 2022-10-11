@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:06:59 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:59 by mmoramov         ###   ########.fr       */
+/*   Created: 2022/10/08 13:48:16 by mmoramov          #+#    #+#             */
+/*   Updated: 2022/10/08 15:03:32 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 //#include <string.h>
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	void	*p;
+	size_t	i;
 
-	p = (void *)malloc(count * size);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, count * size);
-	return (p);
+	i = 0;
+	while ((s1[i] || s2[i]) && i < n)
+	{
+		if ((unsigned char) s1[i] != (unsigned char) s2[i])
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+		i++;
+	}
+	return (0);
 }
+
+/*int main(void)
+{
+	const char *s1;
+	const char *s2;
+
+	s1 = "\x12\xff\x65\x12\xbd\xde\xad";
+	s2 = "\x12\x02";
+
+	printf("%d, %d", strncmp(s1, s2, 5), ft_strncmp(s1, s2, 5));
+}*/

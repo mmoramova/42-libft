@@ -1,46 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 16:05:32 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/10 18:02:16 by mmoramov         ###   ########.fr       */
+/*   Created: 2022/10/08 21:20:43 by mmoramov          #+#    #+#             */
+/*   Updated: 2022/10/09 16:05:23 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (dstsize != 0)
+	j = 0;
+	if (s2[0] == '\0')
+		return ((char *) s1);
+	while (s1[i] && i < len)
 	{
-		while (src[i] && i < dstsize - 1)
+		if (s1[i] == s2[j])
 		{
-			dst[i] = src[i];
-			i++;
+			while (s2[j] && s1[i + j] == s2[j] && i + j < len)
+				j++;
+			if (s2[j] == '\0')
+				return ((char *) &s1[i]);
+			j = 0;
 		}
-		dst[i] = '\0';
+		i++;
 	}
-	return ((size_t) ft_strlen(src));
+	return (NULL);
 }
 
-/*int main(void)
+/*
+int main(void)
 {
-    char string[] = "Hello there, Venus";
-    char buffer[19] = "jstystysty";
-    int r;
+ 	char *s1 = "see FF your FF return FF now FF";
+ 	char *s2 = "FF";   
+   	char *ptr;
 
-    r = ft_strlcpy(buffer, string, 5);
-
-    printf("Copied '%s' into '%s', length %d\n",
-            string,
-            buffer,
-            r
-          );
-}*/
+    ptr = ft_strnstr(s1, s2, 15);
+	printf("%s",ptr);
+}
+*/

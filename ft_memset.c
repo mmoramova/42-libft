@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:06:59 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:59 by mmoramov         ###   ########.fr       */
+/*   Created: 2022/10/08 14:29:11 by mmoramov          #+#    #+#             */
+/*   Updated: 2022/10/08 15:05:04 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 //#include <string.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	void	*p;
+	unsigned char	*s;
 
-	p = (void *)malloc(count * size);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, count * size);
-	return (p);
+	s = b;
+	while (len--)
+	{
+		*s++ = (unsigned char)c;
+	}
+	return (b);
 }
+
+/*int main(void)
+{
+	char s1[50] = "abcdefghijklmnop";
+	char s2[50] = "abcdefghijklmnop";
+	
+	memset(s1 + 5, 'k', 4);
+	ft_memset(s2 + 5, 'k', 204);
+	printf ("%s\n%s", s1, s2);
+}*/

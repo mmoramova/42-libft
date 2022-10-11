@@ -1,26 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:06:59 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:59 by mmoramov         ###   ########.fr       */
+/*   Created: 2022/10/05 18:12:26 by mmoramov          #+#    #+#             */
+/*   Updated: 2022/10/08 13:44:14 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 //#include <string.h>
 
-void	*ft_calloc(size_t count, size_t size)
+/*unsigned int	ft_strlen(const char *s)
 {
-	void	*p;
+	int	i;
 
-	p = (void *)malloc(count * size);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, count * size);
-	return (p);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}*/
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == (char) c)
+			return ((char *) s + i);
+		i--;
+	}
+	return (NULL);
 }
+
+/*int main(void)
+{
+	const char *str;
+	int c;
+
+	str = "hehllo";
+	c = 'h';
+
+	printf("%s, %s, %c", strrchr(str, c), ft_strrchr(str, c), (char) c);
+}*/

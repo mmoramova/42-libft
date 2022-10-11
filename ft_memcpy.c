@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:06:59 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:59 by mmoramov         ###   ########.fr       */
+/*   Created: 2022/10/08 15:15:41 by mmoramov          #+#    #+#             */
+/*   Updated: 2022/10/10 18:00:25 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-//#include <string.h>
+#include <string.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	void	*p;
+	unsigned char		*d;
+	unsigned const char	*s;
 
-	p = (void *)malloc(count * size);
-	if (!p)
+	s = src;
+	d = dst;
+	if (d == 0 && s == 0)
 		return (NULL);
-	ft_bzero(p, count * size);
-	return (p);
+	while (n--)
+		*d++ = *s++;
+	return (dst);
 }
+
+/*int main(void)
+{
+	char s1[50] = "abcdefghijklmnop";
+	char s2[50] = "hello";
+
+	//memcpy(s1+5, s2, 5);
+	//ft_memcpy(s1, s2,6);
+	ft_memcpy(((void *)5), ((void *)0), 3);
+	printf ("%s\n%s", s1, s2);
+}*/

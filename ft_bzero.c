@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:06:59 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:59 by mmoramov         ###   ########.fr       */
+/*   Created: 2022/10/08 15:05:14 by mmoramov          #+#    #+#             */
+/*   Updated: 2022/10/08 15:12:57 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 //#include <string.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_bzero(void *s, size_t n)
 {
-	void	*p;
+	unsigned char	*b;
 
-	p = (void *)malloc(count * size);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, count * size);
-	return (p);
+	b = s;
+	while (n--)
+	{
+		*b++ = '\0';
+	}
 }
+
+/*int main(void)
+{
+	char s1[50] = "abcdefghijklmnop";
+	char s2[50] = "abcdefghijklmnop";
+
+	bzero(s1 + 4, 2);
+	ft_bzero(s2 + 4, 2);
+	printf ("%s\n%s", s1, s2);
+}*/

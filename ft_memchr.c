@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:06:59 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:59 by mmoramov         ###   ########.fr       */
+/*   Created: 2022/10/08 16:45:01 by mmoramov          #+#    #+#             */
+/*   Updated: 2022/10/08 17:00:54 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 //#include <string.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_memchr(const void *s, int c, size_t n)
 {
-	void	*p;
+	size_t				i;
+	unsigned const char	*a;
 
-	p = (void *)malloc(count * size);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, count * size);
-	return (p);
+	i = 0;
+	a = s;
+	while (i < n)
+	{
+		if (a[i] == (unsigned char) c)
+			return ((char *) s + i);
+		i++;
+	}
+	return (NULL);
 }
+
+/*int main(void)
+{
+	const char *str;
+	int c;
+
+	str = "tripo\0uille";
+	//c = 't' + 256;
+	c = '\0';
+	printf("%s, %s, %c", memchr(str, c, 7), ft_memchr(str, c, 7),(char)c);
+}*/
