@@ -6,7 +6,7 @@
 #    By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:27:46 by mmoramov          #+#    #+#              #
-#    Updated: 2022/10/11 19:27:34 by mmoramov         ###   ########.fr        #
+#    Updated: 2022/10/11 20:25:48 by mmoramov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC = ft_isalpha.c ft_toupper.c \
 	  ft_memcpy.c  ft_atoi.c \
 	  ft_memmove.c ft_calloc.c \
 	  ft_strlcpy.c ft_strdup.c \
-	  ft_strlcat.c
+	  ft_strlcat.c \
+	  ft_putchar_fd.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = -I ./
 

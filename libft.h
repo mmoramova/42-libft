@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:33:18 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 19:28:58 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:25:22 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
+void			ft_putchar_fd(char c, int fd);
 
 #endif
