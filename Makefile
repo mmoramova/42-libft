@@ -6,7 +6,7 @@
 #    By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:27:46 by mmoramov          #+#    #+#              #
-#    Updated: 2022/10/11 22:57:38 by mmoramov         ###   ########.fr        #
+#    Updated: 2022/10/15 13:22:24 by mmoramov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC = ft_isalpha.c ft_toupper.c \
 	  ft_memmove.c ft_calloc.c \
 	  ft_strlcpy.c ft_strdup.c \
 	  ft_strlcat.c \
+	  ft_substr.c \
 	  ft_striteri.c \
 	  ft_putchar_fd.c \
 	  ft_putstr_fd.c \

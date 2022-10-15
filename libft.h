@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:33:18 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 22:57:35 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:06:23 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ int				ft_atoi(const char *str);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
 void			ft_putchar_fd(char c, int fd);
-void            ft_putstr_fd(char *s, int fd);
-void            ft_putendl_fd(char *s, int fd);
-void            ft_striteri(char *s, void (*f)(unsigned int, char*));
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

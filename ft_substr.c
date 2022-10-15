@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 19:23:41 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/15 13:47:25 by mmoramov         ###   ########.fr       */
+/*   Created: 2022/10/15 12:44:58 by mmoramov          #+#    #+#             */
+/*   Updated: 2022/10/15 14:01:45 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-//#include <string.h>
+#include <string.h>
 
-char	*ft_strdup(const char *s1)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*p;
-	size_t	len_s1;
+	unsigned int	len_s;
+	unsigned int	i;
+	char			*p;
 
-	len_s1 = ft_strlen(s1) + 1;
-	p = (void *)malloc(len_s1 * sizeof(char));
+	len_s = ft_strlen(s);
+	i = 0;
+	if (len_s <= start)
+		len = 0;
+	else if (len_s < start + len)
+		len = len_s - start;
+	p = malloc(sizeof(char) * (len + 1));
 	if (!p)
 		return (NULL);
-	ft_strlcpy(p, s1, len_s1);
+	while (s[i] && i < len)
+	{
+		p[i] = s[start + i];
+		i++;
+	}
+	p[i] = '\0';
 	return (p);
 }
+
+/*int main(void) {
+	char s1[50] = "Hello123456";
+	
+	char *s2;
+	s2 = ft_substr(s1, 10, 3);
+	printf ("%s, %s", s1, s2);
+}*/

@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 22:47:03 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/11 22:58:05 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:05:23 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 }
 */
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		f(i, &s[i]);
 		i++;
@@ -40,4 +40,3 @@ void    ft_striteri(char *s, void (*f)(unsigned int, char*))
 	ft_striteri (s, *ft_testf);
 }
 */
-
