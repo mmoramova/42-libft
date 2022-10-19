@@ -6,41 +6,38 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:31:09 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/16 20:57:05 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:19:07 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-#include <stdio.h>
 
-/*char ft_testf(unsigned int i, char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    return (ft_toupper(c));
-}*/
-
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	unsigned int     i;
-    char            *p;
+	unsigned int	i;
+	char			*p;
 
 	i = 0;
-    if (!s || !f)
-        return (NULL);
-    p = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-    if (!p)
-        return (NULL);
+	if (!s || !f)
+		return (NULL);
+	p = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!p)
+		return (NULL);
 	while (s[i])
 	{
 		p[i] = f(i, s[i]);
 		i++;
 	}
-    p[i] = '\0';
-    return (p);	
+	p[i] = '\0';
+	return (p);
 }
 
 /*int	main(void)
 {
+	char ft_testf(unsigned int i, char c)
+	{
+   	 return (ft_toupper(c));
+	}
 	char *s;
     char *d;
 

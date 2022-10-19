@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 20:00:53 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/16 20:15:55 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:26:20 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,46 @@
 #include <stdlib.h>
 #include <string.h>
 
-int ft_intlen(long n)
+int	ft_intlen(long n)
 {
-    int len;
-    
-    len = 1;
-    while (n > 9) 
-    {
-        len++;
-        n /= 10;
-    }
-    return (len);
+	int	len;
+
+	len = 1;
+	while (n > 9)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    char    *p;
-    long    nbr;
-    int     len;
-    int     is_negative;
+	char	*p;
+	long	nbr;
+	int		len;
+	int		is_negative;
 
-    nbr = n;
-    is_negative = 0;
-    if (nbr < 0)
-    {
-        is_negative = 1;
-        nbr *= -1;
-    }
-    len = is_negative + ft_intlen(nbr) ;
-    p = malloc(sizeof(char) * (len + 1));
-    if (!p)
-        return (NULL);   
-    p[len] = '\0';
-    while (len-- > 0)
-    {
-        p[len] = (nbr % 10) + '0';
-        nbr /= 10;
-    }
-    if (is_negative)
-        p[0] = '-'; 
-    return (p);
+	nbr = n;
+	is_negative = 0;
+	if (nbr < 0)
+	{
+		is_negative = 1;
+		nbr *= -1;
+	}
+	len = is_negative + ft_intlen(nbr);
+	p = malloc(sizeof(char) * (len + 1));
+	if (!p)
+		return (NULL);
+	p[len] = '\0';
+	while (len-- > 0)
+	{
+		p[len] = (nbr % 10) + '0';
+		nbr /= 10;
+	}
+	if (is_negative)
+		p[0] = '-';
+	return (p);
 }
 
 /*int main(void)

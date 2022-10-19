@@ -6,7 +6,7 @@
 #    By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:27:46 by mmoramov          #+#    #+#              #
-#    Updated: 2022/10/16 20:57:03 by mmoramov         ###   ########.fr        #
+#    Updated: 2022/10/18 21:53:54 by mmoramov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,18 @@ NAME = libft.a
 HEADER = libft.h
 C_FLAGS = -Wall -Wextra -Werror
 RM = rm -f
+
+# Colors
+
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
 
 SRC = ft_isalpha.c ft_toupper.c \
 	  ft_isdigit.c ft_tolower.c \
@@ -42,8 +54,12 @@ all: $(NAME)
 %.o: %.c $(HEADER)
 	$(CC) $(C_FLAGS) $(INCLUDE) -c $< -o $@
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME):: $(OBJ) $(HEADER)
 	ar -rcs $(NAME) $(OBJ)
+	@echo "$(BLUE) \t everything has $(MAGENTA)been compilated! \n blabla"
+
+$(NAME)::
+	@echo "\t Nothing to do in the make"
 
 .PHONY: all clean fclean re
 
@@ -52,6 +68,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	@echo "wauuu all clean"
 	
 re: fclean all
 

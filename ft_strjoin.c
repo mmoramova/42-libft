@@ -6,24 +6,19 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 14:08:50 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/15 14:28:26 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:58:39 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdlib.h>
-//#include <string.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	len_s;
-	unsigned int	len_s1;
-	int				i;
-	char			*p;
+	int		j;
+	int		i;
+	char	*p;
 
-	len_s = ft_strlen(s1) + ft_strlen(s2) + 1;
-	len_s1 = ft_strlen(s1);
-	p = malloc(sizeof(char) * (len_s));
+	p = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!p)
 		return (NULL);
 	i = 0;
@@ -32,13 +27,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		p[i] = s1[i];
 		i++;
 	}
-	i = 0;
-	while (s2[i])
+	j = 0;
+	while (s2[j])
 	{
-		p[len_s1 + i] = s2[i];
-		i++;
+		p[i + j] = s2[j];
+		j++;
 	}
-	p[len_s1 + i] = '\0';
+	p[i + j] = '\0';
 	return (p);
 }
 
