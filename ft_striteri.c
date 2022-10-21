@@ -6,19 +6,11 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 22:47:03 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/15 14:05:23 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:17:34 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-#include <stdio.h>
-
-/*void ft_testf(unsigned int i, char *c)
-{
-    printf("%d, %s \n", i, c);
-}
-*/
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -34,6 +26,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 /*int	main(void)
 {
+	void ft_testf(unsigned int i, char *c)
+	{
+		printf("%d, %s \n", i, c);
+	}
 	char *s;
 
 	s = "hello";

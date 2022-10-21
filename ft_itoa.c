@@ -6,13 +6,11 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 20:00:53 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/18 21:26:20 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:28:29 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 
 int	ft_intlen(long n)
 {
@@ -42,8 +40,7 @@ char	*ft_itoa(int n)
 		nbr *= -1;
 	}
 	len = is_negative + ft_intlen(nbr);
-	p = malloc(sizeof(char) * (len + 1));
-	if (!p)
+	if (!(p = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	p[len] = '\0';
 	while (len-- > 0)

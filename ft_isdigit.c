@@ -6,12 +6,11 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 20:20:32 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/03 20:39:17 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:27:03 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <ctype.h>
 
 int	ft_isdigit(int c)
 {

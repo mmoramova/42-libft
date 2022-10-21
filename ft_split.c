@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 15:24:14 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/21 13:35:27 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:07:10 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ int ft_wordcount (char const *s, char c)
 
 	nbr = 0;
 	is_c = 1;
-	while(s[0])
+	while(*s)
 	{
-		if (s[0] != c && is_c == 1)
+		if (*s != c && is_c)
 		{
 		 	is_c = 0;
 			nbr++;
 		}
-		else if (s[0] == c)
+		else if (*s == c)
 			is_c = 1;
 		s++;
 	}
@@ -38,11 +38,8 @@ int ft_wordlen (char const *s, char c)
 	int len;
 
 	len = 0;
-	while(s[0] && s[0] != c)
-	{
+	while(*s && *s++ != c)
 		len++;
-		s++;
-	}
 	return (len);
 }
 
@@ -55,18 +52,17 @@ void ft_free (char **s, int len)
 
 char **ft_split(char const *s, char c)
 {
-	char **p;
 	int i;
 	int len;
+	char **p;
 
-	len = 0;
 	i = 0;
-	p = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
-	if (!p)
+	len = 0;
+	if (!(p = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
 		return (NULL);
-	while (s[0])
+	while (*s)
 	{
-		if (s[0] != c)
+		if (*s != c)
 		{
 			len = ft_wordlen(s, c);
 			p[i] = ft_substr(s, 0, len);

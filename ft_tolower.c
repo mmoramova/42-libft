@@ -6,16 +6,15 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:59:25 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/04 20:08:17 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:40:26 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <ctype.h>
 
 int	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }

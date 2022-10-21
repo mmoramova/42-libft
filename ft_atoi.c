@@ -6,17 +6,16 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:41:15 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/18 20:44:49 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:17:12 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	ft_atoi(const char *str)
 {
-	int	nbr;
 	int	i;
+	int	nbr;
 	int	sign;
 
 	nbr = 0;
@@ -38,30 +37,12 @@ int	ft_atoi(const char *str)
 
 /*int	main(void)
 {
-	printf("%d\n", atoi("456"));
 	printf("%d\n", ft_atoi("456"));
-	
-	printf("%d\n", atoi("    +---+456"));
 	printf("%d\n", ft_atoi("    +---+456"));
-	
-	printf("%d\n", atoi(" +--456"));
-	printf("%d\n", ft_atoi(" +--456"));
-	
-	printf("%d\n", atoi(" -456"));
+	printf("%d\n", ft_atoi("-0"));
 	printf("%d\n", ft_atoi(" -456"));
-	
-	printf("%d\n", atoi("     +456"));
 	printf("%d\n", ft_atoi("     +456"));
-	
-	printf("%d\n", atoi("  +456"));
-	printf("%d\n", ft_atoi("  +456"));
-	
-	printf("%d\n", atoi("  456"));
 	printf("%d\n", ft_atoi("  456"));
-	
-	printf("%d\n", atoi("gj456"));
 	printf("%d\n", ft_atoi("gj456"));
-	
-	printf("%d\n", atoi("  --jg456"));
-	printf("%d\n", ft_atoi("  --jg456"));
+	printf("%d\n", ft_atoi("  -jg456"));
 }*/

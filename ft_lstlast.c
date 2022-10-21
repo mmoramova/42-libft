@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:29:25 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/21 15:51:02 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:30:10 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 t_list *ft_lstlast(t_list *lst)
 {
-    while (lst && lst -> next != NULL)
-    {
+    while (lst && lst -> next)
         lst = lst -> next;
-    }
     return (lst);
 }

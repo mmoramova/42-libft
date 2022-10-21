@@ -6,25 +6,17 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 20:58:25 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/05 18:11:03 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:50:09 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char) c)
-			return ((char *) s);
+	while (*s && (*s != (char) c))
 		s++;
-	}
-	if (s[i] == (char) c)
+	if (*s == (char) c)
 		return ((char *) s);
 	return (NULL);
 }

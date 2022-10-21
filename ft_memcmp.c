@@ -6,27 +6,23 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:12:06 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/08 16:40:19 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:15:34 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t				i;
 	unsigned const char	*a;
 	unsigned const char	*b;
 
 	a = s1;
 	b = s2;
-	i = 0;
-	while (i < n)
+	while (n--)
 	{
-		if (a[i] != b[i])
-			return (a[i] - b[i]);
-		i++;
+		if (*a++ != *b++)
+			return (*--a - *--b);
 	}
 	return (0);
 }

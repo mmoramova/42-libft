@@ -6,13 +6,11 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 14:29:45 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/15 16:17:50 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:37:48 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

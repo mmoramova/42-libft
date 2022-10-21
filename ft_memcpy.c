@@ -6,12 +6,11 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:15:41 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/10 18:00:25 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:35:40 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -20,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	s = src;
 	d = dst;
-	if (d == 0 && s == 0)
+	if (!d && !s)
 		return (NULL);
 	while (n--)
 		*d++ = *s++;

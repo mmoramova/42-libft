@@ -6,12 +6,11 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 14:29:11 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/08 15:05:04 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:41:05 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -19,9 +18,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	s = b;
 	while (len--)
-	{
 		*s++ = (unsigned char)c;
-	}
 	return (b);
 }
 

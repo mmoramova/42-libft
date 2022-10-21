@@ -6,19 +6,18 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:05:32 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/10 18:02:16 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:51:54 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
 	i = 0;
-	if (dstsize != 0)
+	if (dstsize)
 	{
 		while (src[i] && i < dstsize - 1)
 		{

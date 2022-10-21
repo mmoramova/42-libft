@@ -6,12 +6,11 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:39:58 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/04 19:49:34 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:27:16 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <ctype.h>
 
 int	ft_isprint(int c)
 {
