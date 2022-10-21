@@ -6,7 +6,7 @@
 #    By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:27:46 by mmoramov          #+#    #+#              #
-#    Updated: 2022/10/21 13:14:30 by mmoramov         ###   ########.fr        #
+#    Updated: 2022/10/21 15:58:32 by mmoramov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,10 @@ SRC = ft_isalpha.c ft_toupper.c \
 	  ft_strmapi.c ft_striteri.c \
 	  ft_putchar_fd.c \
 	  ft_putstr_fd.c \
-	  ft_putendl_fd.c ft_putnbr_fd.c
+	  ft_putendl_fd.c ft_putnbr_fd.c \
+	  ft_lstnew.c ft_lstadd_front.c \
+	  ft_lstsize.c ft_lstlast.c \
+	  ft_lstadd_back.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = -I ./
 
