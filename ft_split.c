@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 15:24:14 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/23 11:58:21 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/23 13:50:11 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,9 @@ void	ft_free(char **s, int len)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		len;
 	char	**p;
 
 	i = 0;
-	len = 0;
 	p = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
 	if (!p)
 		return (NULL);
@@ -65,15 +63,14 @@ char	**ft_split(char const *s, char c)
 	{
 		if (*s != c)
 		{
-			len = ft_wordlen(s, c);
-			p[i] = ft_substr(s, 0, len);
+			p[i] = ft_substr(s, 0, ft_wordlen(s, c));
 			if (!p[i])
 			{
 				ft_free(p, i);
 				return (NULL);
 			}
 			i++;
-			s += len - 1;
+			s += ft_wordlen(s, c) - 1;
 		}
 		s++;
 	}
