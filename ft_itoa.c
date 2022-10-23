@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 20:00:53 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/21 22:28:29 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:55:20 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ char	*ft_itoa(int n)
 		nbr *= -1;
 	}
 	len = is_negative + ft_intlen(nbr);
-	if (!(p = malloc(sizeof(char) * (len + 1))))
+	p = malloc(sizeof(char) * (len + 1));
+	if (!p)
 		return (NULL);
 	p[len] = '\0';
 	while (len-- > 0)

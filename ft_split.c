@@ -6,24 +6,24 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 15:24:14 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/21 23:07:10 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:58:21 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_wordcount (char const *s, char c)
+int	ft_wordcount(char const *s, char c)
 {
-	int nbr;
-	int is_c;
+	int	nbr;
+	int	is_c;
 
 	nbr = 0;
 	is_c = 1;
-	while(*s)
+	while (*s)
 	{
 		if (*s != c && is_c)
 		{
-		 	is_c = 0;
+			is_c = 0;
 			nbr++;
 		}
 		else if (*s == c)
@@ -33,32 +33,33 @@ int ft_wordcount (char const *s, char c)
 	return (nbr);
 }
 
-int ft_wordlen (char const *s, char c)
+int	ft_wordlen(char const *s, char c)
 {
-	int len;
+	int	len;
 
 	len = 0;
-	while(*s && *s++ != c)
+	while (*s && *s++ != c)
 		len++;
 	return (len);
 }
 
-void ft_free (char **s, int len)
+void	ft_free(char **s, int len)
 {
-	while(len--)
+	while (len--)
 		free(s[len]);
 	free(s);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int i;
-	int len;
-	char **p;
+	int		i;
+	int		len;
+	char	**p;
 
 	i = 0;
 	len = 0;
-	if (!(p = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
+	p = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
+	if (!p)
 		return (NULL);
 	while (*s)
 	{
