@@ -6,7 +6,7 @@
 #    By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:27:46 by mmoramov          #+#    #+#              #
-#    Updated: 2022/10/25 20:33:27 by mmoramov         ###   ########.fr        #
+#    Updated: 2022/10/28 13:42:50 by mmoramov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ C_FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 # Colors
-DEF_COLOR = \033[0;39m
+BLACK = \033[0;39m
 GRAY = \033[0;90m
 RED = \033[0;91m
 GREEN = \033[0;92m
@@ -54,21 +54,26 @@ all: $(NAME)
 
 $(NAME):: $(OBJ) $(HEADER)
 	ar -rcs $(NAME) $(OBJ)
-	@echo "$(BLUE)Everything has been compilated."
+	@echo "$(BLUE)Everything has been compilated.$(BLACK)"
 
 $(NAME)::
-	@echo "No actions needed."
+	@echo "$(BLUE)No actions needed.$(BLACK)"
 
-bonus: $(OBJ_BONUS) $(HEADER)
-	ar -rcs $(NAME) $(OBJ_BONUS)	
+bonus:: $(OBJ) $(OBJ_BONUS) $(HEADER)
+	touch $@
+	ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+	@echo "$(GREEN)Everything has been compilated.$(BLACK)"
+
+bonus::
+	@echo "$(GREEN)No actions needed.$(BLACK)"
 
 .PHONY: all clean fclean re
 
 clean:
-	$(RM) $(OBJ) $(OBJ_BONUS)
-
+	$(RM) $(OBJ) $(OBJ_BONUS) 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) bonus
+	@echo "$(MAGENTA)Everything has been cleaned.$(BLACK)"
 	
 re: fclean all
 
