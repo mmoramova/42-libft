@@ -6,13 +6,13 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 20:22:19 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/21 23:29:11 by mmoramov         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:17:19 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
