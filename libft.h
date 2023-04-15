@@ -6,7 +6,7 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:33:18 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/10/28 12:17:50 by mmoramov         ###   ########.fr       */
+/*   Updated: 2023/04/15 14:28:06 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+#include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 999
+# endif
 
 typedef struct s_list
 {
@@ -67,5 +72,17 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 int		ft_lstsize(t_list *lst);
+
+/* GET NEXT LINE*/
+char *add_buffer(int fd, char *text);
+char *get_lines(char *text);
+char *update_text(char *text);
+char *get_next_line(int fd);
+char *ft_gnl_free(char **text);
+size_t	ft_gnl_strlcpy(char *dst, char *src, size_t dstsize);
+size_t	ft_gnl_strlen(char *s);
+char	*ft_gnl_strjoin(char *s1, char *s2);
+char	*ft_gnl_strchr(char *s, int c);
+char	*ft_gnl_substr(char *s, unsigned int start, size_t len);
 
 #endif

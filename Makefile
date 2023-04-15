@@ -6,7 +6,7 @@
 #    By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:27:46 by mmoramov          #+#    #+#              #
-#    Updated: 2022/10/28 13:42:50 by mmoramov         ###   ########.fr        #
+#    Updated: 2023/04/15 14:26:18 by mmoramov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ SRC_FILES = ft_isalpha   ft_toupper    ft_isdigit    ft_tolower \
 			ft_strlcpy   ft_strdup     ft_strlcat    ft_substr  \
 			ft_strjoin   ft_strtrim    ft_split      ft_itoa    \
 			ft_strmapi   ft_striteri   ft_putchar_fd            \
-			ft_putstr_fd ft_putendl_fd ft_putnbr_fd
+			ft_putstr_fd ft_putendl_fd ft_putnbr_fd				\
+			get_next_line get_next_line_utils
 
 SRC_FILES_BONUS = ft_lstnew ft_lstadd_front ft_lstsize   \
 				  ft_lstlast ft_lstadd_back ft_lstdelone \
