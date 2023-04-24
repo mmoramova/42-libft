@@ -6,11 +6,11 @@
 /*   By: mmoramov <mmoramov@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:13:14 by mmoramov          #+#    #+#             */
-/*   Updated: 2022/11/26 13:59:15 by mmoramov         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:53:19 by mmoramov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*ft_free(char **text)
 {
